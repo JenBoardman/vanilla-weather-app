@@ -31,10 +31,6 @@ li {
   line-height: 21px;
   font-weight: 300;
 }
-small {
-  text-align: center;
-  color: #ffffff;
-}
 a {
   color: #c1b7d8;
 }
@@ -45,14 +41,52 @@ a {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 15px;
 }
+.todays-weather i {
+  margin-right: 10px;
+  margin-top: 20px;
+  font-size: 50px;
+  position: relative;
+  top: 10px;
+}
+.weather-temp-today strong {
+  font-size: 50px;
+  margin-top: 20px;
+  line-height: 50px;
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
+.weather-temp-today .units {
+  font-size: 14px;
+  position: relative;
+  top: 34px;
+  margin: 5px;
+}
 .forcast-ahead {
   max-width: 700px;
   margin: 30px auto;
   padding: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+.forcast-ahead i {
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 .forcast-temp {
   text-align: center;
   font-size: 14px;
   line-height: 21px;
   color: #ffffff;
+}
+.weather-description {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin: 0px;
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 400;
+}
+.weather-details {
+  text-align: right;
 }
