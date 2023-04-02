@@ -61,20 +61,34 @@ function displayTempreature(response) {
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
 }
-
 function search(city) {
   let apiKey = "0622tcaa31a9d02f3oa3ff0e63b0bb64";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTempreature);
 }
-
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
 
+//geolocate
+
+function findloacation(position) {
+  let apiKey = "0622tcaa31a9d02f3oa3ff0e63b0bb64";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTempreature);
+}
+function geoLocate(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(findLocation);
+}
+
 search("London");
 
+let findLocation = document.querySelector("#location-button");
+findLocation.addEventListener("click", geoLocate);
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
