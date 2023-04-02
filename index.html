@@ -26,24 +26,52 @@
   </head>
   <body>
     <div class="container">
+      <div class="form-container">
+        <form id="search-form">
+          <div class="row">
+            <div class="col-8">
+              <input
+                type="search"
+                placeholder="Enter location..."
+                class="form-control"
+                id="city-input"
+              />
+            </div>
+            <div class="col-2">
+              <button type="submit" class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div class="col-2">
+              <button type="submit" class="locationbutton" id="location-button">
+                <i class="fa-solid fa-location-crosshairs"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
       <div class="todays-weather">
         <div class="row">
           <div class="col-4">
             <h1 id="city"></h1>
             <ul>
               <li>
+                <strong><span id="date"></span></strong>
               </li>
               <li>Last updated <span id="time"></span></li>
             </ul>
           </div>
-          <div class="col-4">
+          <div class="col-5">
             <div class="d-flex weather-temp-today">
-              <i class="fa-solid fa-circle" id="icon"></i>
+              <img src="" alt="weather icon" id="icon" />
               <strong id="currenttemp"></strong
-              ><span class="units">°C | °F</span>
+              ><span class="units"
+                ><a href="" id="celsius-link" class="active">°C</a> |
+                <a href="" id="fahrenheit-link">°F</a></span
+              >
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-3">
             <div class="weather-details">
               <p class="weather-description" id="description"></p>
               <ul>
