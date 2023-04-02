@@ -135,3 +135,11 @@ a {
   padding-top: 20px;
   margin: auto;
 }
+.weather-temp-today .active {
+  color: #212529;
+  cursor: default;
+  text-decoration: none;
+}
+.weather-temp-today .active:hover {
+  text-decoration: none;
+}
