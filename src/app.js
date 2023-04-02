@@ -92,22 +92,25 @@ function displayCelsiusTemperature(event) {
 
 //geolocate
 
+function geoLocate(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(findloacation);
+}
+
 function findloacation(position) {
   let apiKey = "0622tcaa31a9d02f3oa3ff0e63b0bb64";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTempreature);
-}
-function geoLocate(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(findLocation);
+  console.log(apiUrl);
 }
 
 let celsiusTempreture = null;
 
 let findLocation = document.querySelector("#location-button");
 findLocation.addEventListener("click", geoLocate);
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
