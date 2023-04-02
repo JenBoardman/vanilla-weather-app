@@ -49,7 +49,7 @@ a {
   top: 8px;
 }
 .weather-temp-today strong {
-  font-size: 40px;
+  font-size: 45px;
   margin-top: 20px;
   line-height: 50px;
   position: relative;
@@ -95,4 +95,43 @@ a {
 }
 .weather-details li {
   font-size: 12px;
+}
+.search {
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 10px;
+  color: #ffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  background-color: #836d97;
+  border: 0px;
+  transition: all 200ms ease;
+}
+.search:hover {
+  background-color: #b6adf0;
+}
+.locationbutton {
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 10px;
+  color: #ffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  background-color: #836d97;
+  border: 0px;
+  transition: all 200ms ease;
+}
+.locationbutton:hover {
+  background-color: #b6adf0;
+}
+.form-container {
+  max-width: 700px;
+  padding-top: 20px;
+  margin: auto;
 }
