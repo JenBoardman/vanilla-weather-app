@@ -42,6 +42,27 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+<div class="col-2">
+  <i class="fa-solid fa-circle" id="icon"></i>
+  <h3 class="weather-forecast-date">${day}</h3>
+  <p class="forcast-temp"><span class="weather-forecast-temp-max">12°</span> | <span class="weather-forecast-temp-min">6°</span></p>
+</div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTempreature(response) {
   celsiusTempreture = response.data.temperature.current;
   let tempretureElement = document.querySelector("#currenttemp");
@@ -121,3 +142,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("London");
+displayForecast();
